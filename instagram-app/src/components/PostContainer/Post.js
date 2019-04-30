@@ -1,6 +1,7 @@
 import React from 'react';
 import './PostContainer.css';
 import CommentSection from '../CommentSection/CommentSection';
+import moment from "moment";
 
 const Post = props => {
     return(
@@ -16,7 +17,7 @@ const Post = props => {
         </div>
         <h6>{props.post.likes} likes</h6>
         {props.post.comments.map(comment => (<CommentSection comment={comment} />))}
-        <p className= "date">{props.post.timestamp}</p>
+        <p className= "date">{moment(props.post.timestamp).fromNow().toUpperCase()}</p>
         </div>
         </div>
     )
