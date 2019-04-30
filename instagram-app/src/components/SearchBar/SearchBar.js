@@ -21,8 +21,25 @@ class SearchBar extends React.Component{
 
     render(){
         return(
-            <div classNames= "searchbar">
-            
+            <div className= "searchbar">
+            <div className="lefti">
+            <i className="fab fa-instagram"></i>
+            <h5>Instagram</h5>
+            </div>
+            <form onSubmit= {this.handleSubmit}>
+            <input 
+                type="text" 
+                name="search" 
+                placeholder="Search" 
+                value={this.state.input}
+                onChange={this.handleSubmit}
+                />
+            </form>
+            <div className = "righti">
+            <i className="far fa-compass"></i>
+            <i className="far fa-heart"></i>
+            <i className="far fa-user"></i>
+            </div>
             </div>
         )
     }

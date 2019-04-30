@@ -1,0 +1,13 @@
+.comments{
+    margin-top: 5px;
+}
+
+.comments h6{
+    display: inline;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.comments p{
+    display: inline;
+}
