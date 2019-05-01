@@ -7,18 +7,6 @@ import Login from './components/Login/Login';
 const ComponentfromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 
 class App extends React.Component{
-  constructor(){
-    super();
-    this.state= {
-      isLoggedIn : false
-    }
-    }
-  componentDidMount(){
-    if (localStorage.getItem('username')){
-      this.setState({isLoggedIn: true})
-    } else {this.setState({isLoggedIn:false})}
-  }
-
   render() {
   return (
     <div className="App">

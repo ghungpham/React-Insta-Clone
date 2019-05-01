@@ -16,7 +16,7 @@ class Login extends React.Component{
 
     login = event => {
         event.preventDefault();
-        localStorage.setItem('username', 'hungpham');
+        localStorage.setItem('username', this.state.username);
         window.location.reload();
     }
     
