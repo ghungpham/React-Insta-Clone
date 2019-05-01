@@ -6,7 +6,8 @@ class CommentSection extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            input: ""
+            input: "",
+            // comments: props.comments
         }
     }
     

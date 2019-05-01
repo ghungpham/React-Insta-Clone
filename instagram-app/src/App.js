@@ -1,40 +1,32 @@
 import React from 'react';
 import './App.css';
-import dummyData from './dummy-data.js';
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
+import PostsPage from './components/PostContainer/PostsPage';
+import withAuthenticate from './components/Authentication/withAuthenticate';
+import Login from './components/Login/Login';
+
+const ComponentfromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 
 class App extends React.Component{
   constructor(){
     super();
-    this.state = {
-      data: []
+    this.state= {
+      isLoggedIn : false
     }
-  }
-
+    }
   componentDidMount(){
-    this.setState({
-      data: dummyData
-    })
+    if (localStorage.getItem('username')){
+      this.setState({isLoggedIn: true})
+    } else {this.setState({isLoggedIn:false})}
   }
 
-addComment = (comment,index) =>{
-  let newComment = [...this.state.data]
-  newComment[index].comments = [...newComment, {username:'hungpham', text: comment, id: Date.now()}]
-this.setState({
-  data: newComment
-})
-}
-
-
-  render(){
+  render() {
   return (
     <div className="App">
-      <SearchBar />
-      <PostContainer post={this.state.data} addComment={this.addComment} />
+      <ComponentfromWithAuthenticate />
     </div>
   );
-  }
-}
+  }}
+
+  
 
 export default App;

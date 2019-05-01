@@ -1,0 +1,36 @@
+.loginpage{
+    width : 350px;
+    margin: 300px auto;
+    line-height: 2.0rem;
+    padding: 20px 0;
+    border: 3px solid lightgray;
+    text-align : center;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.loginpage h8{
+    margin-right: 20px;
+}
+
+form > input {
+    background-color: white;
+    border: solid 1px lightgray;
+    padding: 6px 5px;
+    font-size: 0.8rem;
+    width: 200px;
+    outline: 0;
+    color: gray;
+    border-radius: 5px;
+
+  }
+
+.loginpage button{
+    margin-top: 20px;
+    font-size: 1rem;
+    background: lightskyblue;
+    border: 1.5px solid lightslategray;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 8px;
+}
