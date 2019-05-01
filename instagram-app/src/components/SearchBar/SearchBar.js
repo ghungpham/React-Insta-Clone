@@ -11,7 +11,8 @@ class SearchBar extends React.Component{
     }
 
     onSearch = event => {
-        this.setState({[event.target.name] : event.target.value})
+        let input = event.target.value;
+        this.setState({input : input})
     }
 
     handleSubmit = event =>{
@@ -32,7 +33,7 @@ class SearchBar extends React.Component{
                 name="search" 
                 placeholder="Search" 
                 value={this.state.input}
-                onChange={this.handleSubmit}
+                onChange={this.onSearch}
                 />
             </form>
             <div className = "righti">

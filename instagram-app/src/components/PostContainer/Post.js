@@ -12,11 +12,7 @@ const Post = props => {
         </div>
         <img className ="postpic" src={props.post.imageUrl} alt={props.post.timestamp}></img>
         <div className = "postbelow">
-        <div className = "posticons"><i className="far fa-heart"></i>
-        <i class="far fa-comment" data-fa-transform="flip-v"></i>
-        </div>
-        <h6>{props.post.likes} likes</h6>
-        {props.post.comments.map(comment => (<CommentSection comment={comment} />))}
+        <CommentSection post={props.post} index={props.index} addComment={props.addComment} />
         <p className= "date">{moment(props.post.timestamp).fromNow().toUpperCase()}</p>
         </div>
         </div>

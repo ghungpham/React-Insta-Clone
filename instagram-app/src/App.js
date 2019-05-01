@@ -8,15 +8,30 @@ class App extends React.Component{
   constructor(){
     super();
     this.state = {
-      dummyData
+      data: []
     }
   }
+
+  componentDidMount(){
+    this.setState({
+      data: dummyData
+    })
+  }
+
+addComment = (comment,index) =>{
+  let newComment = [...this.state.data]
+  newComment[index].comments = [...newComment, {username:'hungpham', text: comment, id: Date.now()}]
+this.setState({
+  data: newComment
+})
+}
+
 
   render(){
   return (
     <div className="App">
       <SearchBar />
-      <PostContainer post={this.state.dummyData} />
+      <PostContainer post={this.state.data} addComment={this.addComment} />
     </div>
   );
   }

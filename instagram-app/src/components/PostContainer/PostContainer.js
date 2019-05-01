@@ -5,7 +5,7 @@ import Post from './Post';
 const PostContainer = props => {
     return(
         <div className="PostContainer">
-        {props.post.map(post => (<Post post={post} key={props.post.timestamp} /> ))}
+        {props.post.map((post,index) => (<Post post={post} index={index} key={post.timestamp} addComment={props.addComment} /> ))}
         </div>
         )
 }
