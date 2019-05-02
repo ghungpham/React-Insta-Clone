@@ -1,0 +1,57 @@
+.PostContainer {
+    max-width: 645px;
+    margin: 20px auto;
+    
+    font-size: 0.85rem;
+}
+
+.PostContainer .eachpost {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.PostContainer .eachpost .postheader{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 20px 0px 0px 10px;
+}
+.PostContainer .eachpost .postheader .thumbnail{
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%; 
+    margin-right: 10px;
+}
+
+.PostContainer .eachpost .postpic{
+    margin: 0 auto;
+    width: 643px;
+    height: auto;
+}
+
+.PostContainer .eachpost .postbelow {
+    padding: 10px 0 0 10px;
+}
+.PostContainer .eachpost .postbelow .posticons{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    width: 9.5%;
+    margin-bottom: 5px;
+}
+
+.PostContainer .eachpost .postbelow h6{
+    font-weight: bold;
+}
+
+.PostContainer .eachpost .postbelow .date{
+    margin-top: 10px;
+    color: gray;
+    font-size: 0.65rem;
+}
