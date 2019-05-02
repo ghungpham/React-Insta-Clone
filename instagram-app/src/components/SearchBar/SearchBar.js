@@ -1,6 +1,6 @@
 import React from 'react';
-// import './SearchBar.css';
 import styled from 'styled-components';
+
 
 const SearchBarWrapper = styled.header `
     padding-top: 15px;
@@ -19,10 +19,31 @@ const LogoHeader = styled.div `
     justify-content: space-evenly;
     padding-left: 50px;
     `
-const LogoImg = styled.div `
+const LogoImg = styled.img `
     margin-left: 10px;
     border-left: 1px solid black;
     padding-left: 10px;
+    background: url("./instalogo.png")
+`
+const Searchright = styled.div `
+    padding-right: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+` 
+const SearchInput = styled.input `
+        background-color: white;
+        border: solid 1px lightgray;
+        padding: 6px 5px;
+        font-size: 0.8rem;
+        width: 300px;
+        outline: 0;
+        color: gray;
+        border-radius: 5px;
+        &::placeholder {
+            text-align: center;
+        }
 `
 
 class SearchBar extends React.Component{
@@ -49,10 +70,10 @@ class SearchBar extends React.Component{
             <SearchBarWrapper>
             <LogoHeader>
             <i className="fab fa-instagram"></i>
-            <LogoImg><img src="./instalogo.png" alt="Instagram"></img></LogoImg>
+            <LogoImg src="./../../instalogo.png" alt="Instagram"></LogoImg>
             </LogoHeader>
             <form onSubmit= {this.handleSubmit}>
-            <input 
+            <SearchInput 
                 type="text" 
                 name="search" 
                 placeholder="Search" 
@@ -60,11 +81,11 @@ class SearchBar extends React.Component{
                 onChange={this.onSearch}
                 />
             </form>
-            <div className = "righti">
+            <Searchright>
             <i className="far fa-compass"></i>
             <i className="far fa-heart"></i>
             <i className="far fa-user"></i>
-            </div>
+            </Searchright>
             </SearchBarWrapper>
         )
     }

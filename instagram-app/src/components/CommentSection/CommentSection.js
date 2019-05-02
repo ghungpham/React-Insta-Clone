@@ -1,6 +1,42 @@
 import React from 'react';
-import './CommentSection.css';
-// import moment from "moment";
+import styled from 'styled-components';
+
+const CommentContainer = styled.div `
+    padding-bottom: 15px;
+    border-bottom: 1px solid lightgray;
+    `
+
+const Comments = styled.p `
+    margin-top: 10px;
+    display: inline;
+    margin-right: ${props => props.username? "5px": "0px"} 
+    font-weight:  ${props => props.username? "bold": "normal" }  
+        `      
+const CommentsInput = styled.input `
+    margin-top: 10px;
+    background-color: white;
+    border: 0px;
+    padding: 5px 5px;
+    font-size: 0.8rem;
+    width: 100%;
+    outline: 0;
+    color: black;
+    &::placeholder {
+        text-align: left;
+        color:  gray;
+    }
+`
+const PostIcons = styled.div `
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    width: 9.5%;
+    margin-bottom: 5px;
+    font-weight: bold
+`
+const Likes = styled.h6 `
+    font-weight: bold
+`
 
 class CommentSection extends React.Component {
     constructor(props){
@@ -24,21 +60,22 @@ class CommentSection extends React.Component {
         console.log(this.props.post)
     return (
         <div>
-        <div className = "posticons"><i className="far fa-heart"></i>
+        <PostIcons><i className="far fa-heart"></i>
         <i className="far fa-comment" data-fa-transform="flip-v"></i>
-        </div>
-        <h6>{this.props.post.likes} likes</h6>
-        <div className="commentscontainer">
+        </PostIcons>
+        <Likes>{this.props.post.likes} likes</Likes>
+       
+        <CommentContainer>
         {this.props.post.comments.map((comment,index) => (
-            <div className="comments" key={index}>
-            <h6>{comment.username}</h6>
-            <p>{comment.text}</p>
+            <div key={index}>
+            <Comments username>{comment.username}</Comments>
+            <Comments>{comment.text}</Comments>
             </div>
         ))}
-        </div>
-        <div className="input">
+        </CommentContainer>
+        <div>
         <form onSubmit = {this.handleSubmit} >
-        <input
+        <CommentsInput
             type= "text"
             name= "comment"
             id= "new-comment"
