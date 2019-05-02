@@ -1,5 +1,29 @@
 import React from 'react';
-import './SearchBar.css';
+// import './SearchBar.css';
+import styled from 'styled-components';
+
+const SearchBarWrapper = styled.header `
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid lightgray;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+`
+const LogoHeader = styled.div `
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 50px;
+    `
+const LogoImg = styled.div `
+    margin-left: 10px;
+    border-left: 1px solid black;
+    padding-left: 10px;
+`
 
 class SearchBar extends React.Component{
     constructor (props){
@@ -22,11 +46,11 @@ class SearchBar extends React.Component{
 
     render(){
         return(
-            <div className= "searchbar">
-            <div className="lefti">
+            <SearchBarWrapper>
+            <LogoHeader>
             <i className="fab fa-instagram"></i>
-            <h5>Instagram</h5>
-            </div>
+            <LogoImg><img src="./instalogo.png" alt="Instagram"></img></LogoImg>
+            </LogoHeader>
             <form onSubmit= {this.handleSubmit}>
             <input 
                 type="text" 
@@ -41,7 +65,7 @@ class SearchBar extends React.Component{
             <i className="far fa-heart"></i>
             <i className="far fa-user"></i>
             </div>
-            </div>
+            </SearchBarWrapper>
         )
     }
 }
