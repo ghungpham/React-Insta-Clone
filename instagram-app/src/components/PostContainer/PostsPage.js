@@ -20,9 +20,9 @@ class Postspage extends React.Component{
 
 addComment = (comment,index) =>{
   let newComment = [...this.state.data]
-  newComment[index].comments = [...newComment, {username:'hungpham', text: comment, id: Date.now()}]
-this.setState({
-  data: newComment
+ newComment[index].comments = [...newComment[index].comments, {username:'hungpham', text: comment, id: Date.now()}]
+ this.setState({
+  data: newComment 
 })
 }
 
